@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
+import { Fade } from 'react-awesome-reveal'
 
 export default function Home() {
   return (
@@ -13,9 +14,11 @@ export default function Home() {
 
       <main className={styles.main}>
 
+      <Fade direction="down">
         <h1 className="text-3xl font-bold  my-6">
           Hello world!
         </h1>
+        </Fade>
 
     </main>
 
