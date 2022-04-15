@@ -31,6 +31,10 @@ export default function Home(props: any) {
             </Link>
           ))}
         </Fade>
+
+        <p>
+          Public environment variable: {process.env.NEXT_PUBLIC_ENV_VARIABLE}
+        </p>
       </main>
     </div>
   );
