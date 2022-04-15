@@ -7,4 +7,5 @@ Project starter template for NextJS configured with Typescript, TailwindCSS
 - NextJS
 - TailwindCSS
 - Typescript
-
+- Prettier
+- i18n using next-translate
