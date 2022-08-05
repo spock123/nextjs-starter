@@ -30,6 +30,10 @@ export default function Home(props: any) {
               <a>{lang}</a>
             </Link>
           ))}
+
+          <Link href="/hooks">
+            <a>Hooks</a>
+          </Link>
         </Fade>
 
         <p>
@@ -43,7 +47,7 @@ export default function Home(props: any) {
 export async function getStaticProps(context: any) {
   return {
     props: {
-      context,
-    },
+      context
+    }
   };
 }

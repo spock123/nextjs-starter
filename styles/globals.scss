@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html,
 body {
   padding: 0;
@@ -18,4 +17,23 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* BUTTONS */
+.btn {
+  @apply text-center
+      py-3
+      px-6 lg:px-8
+      rounded-md
+      lg:text-xl 
+      cursor-pointer
+      tracking-wider
+      box-border
+      focus:outline-none
+      transition ease-in duration-200
+      bg-primary-500 hover:bg-primary-400 text-white;
+
+  &.btn-primary {
+    @apply bg-primary-500 hover:bg-primary-400 text-white;
+  }
 }

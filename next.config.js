@@ -5,16 +5,17 @@ const runtimeCaching = require('next-pwa/cache');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  productionBrowserSourceMaps: false,
   // pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
   env: {},
   pwa: {
     dest: 'public',
-    runtimeCaching,
-  },
+    runtimeCaching
+  }
 };
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
+  enabled: process.env.ANALYZE === 'true'
 });
 
 module.exports = withPWA(nextTranslate(withBundleAnalyzer(nextConfig)));
