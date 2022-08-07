@@ -11,6 +11,9 @@ const nextConfig = {
   pwa: {
     dest: 'public',
     runtimeCaching
+  },
+  images: {
+    domains: ['images.dog.ceo']
   }
 };
 
