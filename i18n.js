@@ -4,7 +4,7 @@ module.exports = {
   pages: {
     '*': ['common']
   },
-  logger: true,
+  // logger: true,
   loadLocaleFrom: (locale, namespace) =>
     import(`./locales/${locale}/${namespace}`).then((m) => m.default)
 };
