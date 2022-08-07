@@ -19,6 +19,29 @@ a {
   box-sizing: border-box;
 }
 
+a,
+a:visited {
+  @apply text-primary-500 no-underline;
+}
+a:hover {
+  @apply text-primary-300 underline;
+}
+
+*:focus {
+  outline: 0;
+}
+*:focus {
+  outline: none !important;
+}
+
+// Make sure a hrefs work like links, even without href
+a:not([href]) {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
 /* BUTTONS */
 .btn {
   @apply text-center

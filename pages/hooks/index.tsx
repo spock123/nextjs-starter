@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
+import { Frame } from '@components';
+
 const Hooks = () => {
   return (
     <>
-      <div className="container">
-        <h1 className="text-3xl font-bold  my-6">Hooks</h1>
-
+      <Frame title="Hooks">
         <ul>
           <li>
             <Link href="/hooks/use-state">
@@ -18,7 +18,7 @@ const Hooks = () => {
             </Link>
           </li>
         </ul>
-      </div>
+      </Frame>
     </>
   );
 };
