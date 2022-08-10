@@ -5,7 +5,7 @@ import { Frame } from '@/components';
 const UseStateComponent = () => {
   const [image, setImage] = useState('');
 
-  const getImages = async (): Promise<any> => {
+  const getImage = async (): Promise<any> => {
     setImage('');
     const response = await (
       await fetch('https://dog.ceo/api/breeds/image/random')
@@ -15,8 +15,7 @@ const UseStateComponent = () => {
   };
 
   useEffect(() => {
-    console.log('I am called at component init');
-    getImages();
+    getImage();
   }, []);
 
   return (
@@ -40,7 +39,7 @@ const UseStateComponent = () => {
               <button
                 className="btn btn-primary"
                 type="button"
-                onClick={getImages}
+                onClick={getImage}
               >
                 Update
               </button>
