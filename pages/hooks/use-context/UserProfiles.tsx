@@ -5,8 +5,8 @@ const UserProfiles = () => {
   const users = useContext(UserContext);
   return (
     <div>
-      {users.map((user) => (
-        <li>
+      {users.map((user, index) => (
+        <li key={index}>
           I am {user.name} and I am a {user.occupation}!
         </li>
       ))}

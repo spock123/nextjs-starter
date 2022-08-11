@@ -30,6 +30,7 @@ const UseStateComponent = () => {
                 src={image}
                 layout="responsive"
                 placeholder="empty"
+                alt="this is a dog"
                 width={700}
                 height={475}
               />

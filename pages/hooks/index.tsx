@@ -2,7 +2,12 @@ import Link from 'next/link';
 
 import { Frame } from '@components';
 
-const links: { href: string; title: string }[] = [
+interface ILink {
+  href: string;
+  title: string;
+}
+
+const hooksLinks: ILink[] = [
   {
     href: '/hooks/use-state/use-state-example',
     title: 'useState'
@@ -21,12 +26,31 @@ const links: { href: string; title: string }[] = [
   }
 ];
 
+const customHooksLinks: ILink[] = [
+  {
+    href: '/hooks/custom-hooks/use-fetch/use-fetch-example',
+    title: 'useFetch'
+  }
+];
+
 const Hooks = () => {
   return (
     <>
       <Frame title="Hooks">
+        <h1>Built in Hooks:</h1>
         <ul>
-          {links.map(({ href, title }, index) => (
+          {hooksLinks.map(({ href, title }, index) => (
+            <li key={index}>
+              <Link href={href}>
+                <a>{title}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <h1>Custom Hooks:</h1>
+        <ul>
+          {customHooksLinks.map(({ href, title }, index) => (
             <li key={index}>
               <Link href={href}>
                 <a>{title}</a>
