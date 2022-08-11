@@ -1,14 +1,20 @@
 import { useReducer } from 'react';
 import { Frame } from '@/components';
 
-type Action = 'INCREMENT' | 'DECREMENT';
-
 interface IState {
   counter: number;
 }
 
-const reducer = (state: IState, action: any): IState => {
-  switch (action.type as Action) {
+const initialValue: IState = {
+  counter: 0
+};
+
+type Action =
+  | { type: 'INCREMENT'; payload?: null }
+  | { type: 'DECREMENT'; payload?: null };
+
+const reducer = (state: IState, action: Action): IState => {
+  switch (action.type) {
     case 'INCREMENT': {
       return {
         ...state,
@@ -22,12 +28,12 @@ const reducer = (state: IState, action: any): IState => {
       };
     }
     default:
-      return state;
+      throw new Error('Unknown action');
   }
 };
 
 const UseReducerComponent = () => {
-  const [state, dispatch] = useReducer(reducer, { counter: 0 });
+  const [state, dispatch] = useReducer(reducer, initialValue);
 
   const increment = () => dispatch({ type: 'INCREMENT' });
   const decrement = () => dispatch({ type: 'DECREMENT' });

@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 
 const useFetch = (url: string) => {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState('');
+  const [data, setData] = useState<Response | null>(null);
+  const [error, setError] = useState<Error | null>();
+  const [isPending, setIsPending] = useState<boolean>(false);
   useEffect(() => {
+    setIsPending(true);
+
     fetch(url)
       .then((res) => {
         if (!res.ok) {
@@ -14,17 +17,19 @@ const useFetch = (url: string) => {
       .then((res) => res.json())
       .then((res) => {
         setData(res);
+        setIsPending(false);
       })
       .then(() => {
-        setError('');
+        setError(null);
       })
       .catch((error) => {
         console.warn(`sorry an error occurred, due to ${error.message} `);
         setData(null);
+        setIsPending(false);
         setError(error.message);
       });
   }, [url]);
-  return [data, error];
+  return [data, isPending, error];
 };
 
 export default useFetch;

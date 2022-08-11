@@ -3,11 +3,19 @@ import useFetch from './useFetch';
 import Image from 'next/image';
 
 const useFetchComponent = () => {
-  const [data, error] = useFetch('https://dog.ceo/api/breeds/image/random');
+  const [data, isPending, error] = useFetch(
+    'https://dog.ceo/api/breeds/image/random'
+  );
   return (
     <Frame title="useFetch">
       <>
-        {error && <p>Error: {error}</p>}
+        {isPending && <div>Loading...</div>}
+
+        {error && (
+          <div>
+            <>Error: {error}</>
+          </div>
+        )}
 
         {data && (
           <Image
