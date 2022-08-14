@@ -34,6 +34,10 @@ const customHooksLinks: ILink[] = [
   {
     href: '/hooks/custom-hooks/use-fetch/use-fetch-example',
     title: 'useFetch'
+  },
+  {
+    href: '/hooks/custom-hooks/use-localstorage/use-localstorage-example',
+    title: 'useLocalstorage'
   }
 ];
 
