@@ -23,6 +23,10 @@ const hooksLinks: ILink[] = [
   {
     href: '/hooks/use-context/use-context-example',
     title: 'useContext'
+  },
+  {
+    href: '/hooks/use-ref/use-ref-example',
+    title: 'useRef'
   }
 ];
 
