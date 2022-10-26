@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Frame } from '@/components';
@@ -28,7 +30,6 @@ const UseStateComponent = () => {
             <div className="w-full lg:w-1/3 block">
               <Image
                 src={image}
-                layout="responsive"
                 placeholder="empty"
                 alt="this is a dog"
                 width={700}

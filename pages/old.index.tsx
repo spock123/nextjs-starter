@@ -29,13 +29,11 @@ export default function Home(props: any) {
 
             {locales.map((lang: string, idx: number) => (
               <Link href="/" key={idx} locale={lang}>
-                <a>{lang}</a>
+                {lang}
               </Link>
             ))}
 
-            <Link href="/hooks">
-              <a>Hooks</a>
-            </Link>
+            <Link href="/hooks">Hooks</Link>
           </Fade>
 
           <p>

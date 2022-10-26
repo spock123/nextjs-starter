@@ -9,34 +9,34 @@ interface ILink {
 
 const hooksLinks: ILink[] = [
   {
-    href: '/hooks/use-state/use-state-example',
+    href: '/hooks/use-state',
     title: 'useState'
   },
   {
-    href: '/hooks/use-reducer/use-reducer-example',
+    href: '/hooks/use-reducer',
     title: 'useReducer'
   },
   {
-    href: '/hooks/use-effect/use-effect-example',
+    href: '/hooks/use-effect',
     title: 'useEffect'
   },
   {
-    href: '/hooks/use-context/use-context-example',
+    href: '/hooks/use-context',
     title: 'useContext'
   },
   {
-    href: '/hooks/use-ref/use-ref-example',
+    href: '/hooks/use-ref',
     title: 'useRef'
   }
 ];
 
 const customHooksLinks: ILink[] = [
   {
-    href: '/hooks/custom-hooks/use-fetch/use-fetch-example',
+    href: '/hooks/custom-hooks/use-fetch',
     title: 'useFetch'
   },
   {
-    href: '/hooks/custom-hooks/use-localstorage/use-localstorage-example',
+    href: '/hooks/custom-hooks/use-localstorage',
     title: 'useLocalstorage'
   }
 ];
@@ -49,9 +49,7 @@ const Hooks = () => {
         <ul>
           {hooksLinks.map(({ href, title }, index) => (
             <li key={index}>
-              <Link href={href}>
-                <a>{title}</a>
-              </Link>
+              <Link href={href}>{title}</Link>
             </li>
           ))}
         </ul>
@@ -60,9 +58,7 @@ const Hooks = () => {
         <ul>
           {customHooksLinks.map(({ href, title }, index) => (
             <li key={index}>
-              <Link href={href}>
-                <a>{title}</a>
-              </Link>
+              <Link href={href}>{title}</Link>
             </li>
           ))}
         </ul>

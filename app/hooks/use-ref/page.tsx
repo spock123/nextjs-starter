@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useRef, ChangeEvent } from 'react';
 import { Frame } from '@/components';
 
