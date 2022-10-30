@@ -1,6 +1,9 @@
-import '../styles/globals.scss';
+'use client';
 
-export default function RootLayout({ children }: { children: any }) {
+import '../styles/globals.scss';
+import { ReactNode } from 'react';
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html>
       <body className="overflow-y-scrol">
@@ -12,7 +15,7 @@ export default function RootLayout({ children }: { children: any }) {
           <div className="col-start-3 space-y-6">
             <b>Address bar</b>
 
-            <div className="rounded-xl border border-zinc-800">{children}</div>
+            <div className="rounded-xl border">{children}</div>
           </div>
         </div>
       </body>
