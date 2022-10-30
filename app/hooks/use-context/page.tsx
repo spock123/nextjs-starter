@@ -1,18 +1,7 @@
-import { createContext } from 'react';
+'use client';
+
+import UserContext, { users } from './user-context';
 import UserProfiles from './UserProfiles';
-
-const users = [
-  {
-    name: 'Lars Jeppesen',
-    occupation: 'Wizard'
-  },
-  {
-    name: 'Simone Araujo',
-    occupation: 'Lawyer'
-  }
-];
-
-export const UserContext = createContext(users);
 
 import { Frame } from '@/components';
 

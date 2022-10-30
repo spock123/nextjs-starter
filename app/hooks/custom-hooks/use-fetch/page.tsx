@@ -1,3 +1,5 @@
+'use client';
+
 import { Frame } from '@/components';
 import useFetch from './useFetch';
 import Image from 'next/image';
@@ -20,7 +22,6 @@ const useFetchComponent = () => {
         {data && (
           <Image
             src={(data as any).message}
-            layout="responsive"
             placeholder="empty"
             alt="this is a dog"
             width={700}

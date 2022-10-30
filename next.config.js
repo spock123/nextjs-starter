@@ -5,8 +5,8 @@ const runtimeCaching = require('next-pwa/cache');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
   productionBrowserSourceMaps: false,
-  // pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
   env: {},
   pwa: {
     dest: 'public',
@@ -14,6 +14,9 @@ const nextConfig = {
   },
   images: {
     domains: ['images.dog.ceo']
+  },
+  experimental: {
+    appDir: true
   }
 };
 
