@@ -1,17 +1,27 @@
 'use client';
 
-import { Frame } from '../components';
-import styles from '../styles/Home.module.scss';
+import { Frame } from '../../components';
+import styles from '../../styles/Home.module.scss';
 import Link from 'next/link';
 import { Fade } from 'react-awesome-reveal';
+import { useTranslation } from '../i18n';
 
-export default function Page(props: any) {
+interface IProps {
+  params: {
+    lang: string;
+  };
+}
+
+export default function Page(props: IProps) {
+  const { lang } = props.params;
+  //const { t } =  useTranslation(lang);
+
   return (
     <div className={styles.container}>
       <Frame title="NextJS Starter">
         <main className={styles.main}>
           <Fade direction="down">
-            <Link href="/hooks">Hooks</Link>
+            <Link href={`${lang}/hooks`}>Hooks</Link>
           </Fade>
 
           <p>
