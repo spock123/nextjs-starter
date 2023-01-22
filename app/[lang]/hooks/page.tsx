@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useTranslation } from '../../i18n';
 
 import { Frame } from '@components';
 
@@ -7,41 +8,49 @@ interface ILink {
   title: string;
 }
 
+interface IProps {
+  params: {
+    lang: string;
+  };
+}
+
 const hooksLinks: ILink[] = [
   {
-    href: '/hooks/use-state',
+    href: 'use-state',
     title: 'useState'
   },
   {
-    href: '/hooks/use-reducer',
+    href: 'use-reducer',
     title: 'useReducer'
   },
   {
-    href: '/hooks/use-effect',
+    href: 'use-effect',
     title: 'useEffect'
   },
   {
-    href: '/hooks/use-context',
+    href: 'use-context',
     title: 'useContext'
   },
   {
-    href: '/hooks/use-ref',
+    href: 'use-ref',
     title: 'useRef'
   }
 ];
 
 const customHooksLinks: ILink[] = [
   {
-    href: '/hooks/custom-hooks/use-fetch',
+    href: 'use-fetch',
     title: 'useFetch'
   },
   {
-    href: '/hooks/custom-hooks/use-localstorage',
+    href: 'use-localstorage',
     title: 'useLocalstorage'
   }
 ];
 
-const Hooks = () => {
+const Hooks = async (props: IProps) => {
+  const { lang } = props.params;
+  const { t } = await useTranslation(lang, 'translation');
   return (
     <>
       <Frame title="Hooks">
@@ -49,7 +58,7 @@ const Hooks = () => {
         <ul>
           {hooksLinks.map(({ href, title }, index) => (
             <li key={index}>
-              <Link href={href}>{title}</Link>
+              <Link href={`/${lang}/hooks/${href}`}>{title}</Link>
             </li>
           ))}
         </ul>
@@ -58,7 +67,7 @@ const Hooks = () => {
         <ul>
           {customHooksLinks.map(({ href, title }, index) => (
             <li key={index}>
-              <Link href={href}>{title}</Link>
+              <Link href={`/${lang}/hooks/custom-hooks/${href}`}>{title}</Link>
             </li>
           ))}
         </ul>
