@@ -16,8 +16,11 @@ interface IProps {
 }
 
 export default function RootLayout(props: IProps) {
-  const { children, params } = props;
-  const { lang } = params;
+  const {
+    children,
+    params: { lang }
+  } = props;
+
   return (
     <html lang={lang} dir={dir(lang)}>
       <body className="overflow-y-scrol">

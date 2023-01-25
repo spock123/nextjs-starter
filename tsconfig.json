@@ -16,6 +16,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
+      "react": ["./node_modules/@types/react"],
       "@components": ["components"],
       "@components/*": ["components", "components/*"],
       "@/*": ["./*"]
@@ -26,13 +27,7 @@
       }
     ]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "pages/index.page.tsx",
-    ".next/types/**/*.ts",
-    "next.config.js"
-  ],
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+
   "exclude": ["node_modules"]
 }

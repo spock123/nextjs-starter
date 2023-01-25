@@ -1,3 +1,8 @@
 {
-  "title": "Danish title"
+  "title": "English English English title",
+  "no-context": "This is a no context translation",
+  "blog": {
+    "text": "Check out the correspondig <1>blog post</1> describing this example.",
+    "link": "https://fresto.io"
+  }
 }

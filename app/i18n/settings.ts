@@ -1,15 +1,22 @@
-export const fallbackLang = 'en';
-export const languages = [fallbackLang, 'da'];
+export const fallbackLng = 'en';
+export const languages = [fallbackLng, 'da'];
 export const defaultNS = 'translation';
 
-export function getOptions(lang = fallbackLang, ns = defaultNS) {
+export function getOptions(
+  lng = fallbackLng,
+  ns: string | string[] = defaultNS
+) {
   return {
     // debug: true,
     supportedLngs: languages,
-    fallbackLang,
-    lang,
+    // preload: languages,
+    fallbackLng,
+    lng,
     fallbackNS: defaultNS,
     defaultNS,
     ns
+    // backend: {
+    //   projectId: '01b2e5e8-6243-47d1-b36f-963dbb8bcae3'
+    // }
   };
 }

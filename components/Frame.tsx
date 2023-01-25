@@ -3,7 +3,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Frame = ({ children, title }: Props) => {
+export default async function Frame({ children, title }: Props) {
   return (
     <>
       <div className="container grid gap-y-6 my-6 mx-6">
@@ -12,6 +12,4 @@ const Frame = ({ children, title }: Props) => {
       </div>
     </>
   );
-};
-
-export default Frame;
+}

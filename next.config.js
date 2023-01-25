@@ -7,20 +7,12 @@ const withPWA = require('next-pwa')({
 
 const plugins = [];
 
-if (process.env.ANALYZE === 'true') {
-  // only load dependency if env `ANALYZE` was set
-  const withBundleAnalyzer = require('@next/bundle-analyzer')({
-    enabled: true
-  });
-
-  plugins.push(withBundleAnalyzer);
-}
-
 plugins.push(withPWA);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
   experimental: {
     appDir: true
   }
