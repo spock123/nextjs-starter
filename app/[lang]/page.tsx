@@ -20,7 +20,6 @@ export default async function Page(props: IProps) {
   return (
     <>
       <div className={styles.container}>
-        {/* @ts-expect-error Server Component */}
         <Frame title={t('title')}>
           <main className={styles.main}>
             {/* Interpolation */}

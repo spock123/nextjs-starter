@@ -51,6 +51,7 @@ const customHooksLinks: ILink[] = [
 const Hooks = async (props: IProps) => {
   const { lang } = props.params;
   const { t } = await useTranslation(lang, 'translation');
+
   return (
     <>
       <Frame title="Hooks">
