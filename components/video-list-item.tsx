@@ -1,4 +1,5 @@
-export default function VideoListItem(props: { video: any }) {
+import { IVideo } from '@types';
+export default function VideoListItem(props: { video: IVideo }) {
   const { video } = props;
   return (
     <div key={video.id.videoId}>
@@ -6,7 +7,7 @@ export default function VideoListItem(props: { video: any }) {
       {video.snippet.thumbnails && (
         <img
           src={video.snippet.thumbnails.default.url}
-          alt="test"
+          alt={video.snippet.title}
           className="w-full h-auto rounded-xl"
         />
       )}
